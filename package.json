@@ -1,0 +1,24 @@
+{
+  "name": "tree-sitter-cal",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for Dynamics NAV C/AL (C/SIDE export)",
+  "main": "grammar.js",
+  "license": "MIT",
+  "scripts": {
+    "generate": "npx --yes tree-sitter-cli@0.26.5 generate",
+    "test": "npx --yes tree-sitter-cli@0.26.5 test",
+    "parse:sample": "node scripts/parse_corpus.js --sample",
+    "parse:all": "node scripts/parse_corpus.js --all"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.26.5"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.c-al",
+      "file-types": [
+        "txt"
+      ]
+    }
+  ]
+}

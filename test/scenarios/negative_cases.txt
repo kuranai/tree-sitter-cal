@@ -1,0 +1,125 @@
+==================
+Negative Missing End
+==================
+OBJECT Codeunit 60000 Missing End
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    PROCEDURE Broken@1();
+    BEGIN
+      IF TRUE THEN
+        EXIT;
+
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file)
+
+==================
+Negative Malformed Case
+==================
+OBJECT Codeunit 60001 Bad Case
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    PROCEDURE Broken@1();
+    BEGIN
+      CASE TRUE OF
+        1
+          EXIT;
+      END;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file)
+
+==================
+Negative Broken Metadata Entry
+==================
+OBJECT Table 60002 Bad Metadata
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1 ; ;Code ;Code20 ;CaptionML=ENU=Code
+  }
+  KEYS
+  {
+    { ;Code ;Clustered=Yes }
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file)
+
+==================
+Negative Truncated RdlData
+==================
+OBJECT Report 60003 Broken Rdl
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  DATASET
+  {
+  }
+  REQUESTPAGE
+  {
+    PROPERTIES
+    {
+    }
+    CONTROLS
+    {
+    }
+  }
+  LABELS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+  RDLDATA
+  {
+    <Report>
+}
+---
+
+(source_file)

@@ -1,0 +1,375 @@
+==================
+Table Object (NAV_Standard/table/18.txt)
+==================
+OBJECT Table 18 Customer
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+  }
+  KEYS
+  {
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (table_object_body
+      (properties_section)
+      (fields_section)
+      (keys_section)
+      (fieldgroups_section)
+      (code_section
+        (code_item
+          (begin_end_block))))))
+
+==================
+Page Object (NAV_Standard/page/21.txt)
+==================
+OBJECT Page 21 CustomerCard
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CONTROLS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (page_object_body
+      (properties_section)
+      (controls_section)
+      (code_section
+        (code_item
+          (begin_end_block))))))
+
+==================
+Report Object With RdlData (NAV_Standard/report/1.txt)
+==================
+OBJECT Report 1 ChartOfAccounts
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  DATASET
+  {
+  }
+  REQUESTPAGE
+  {
+    PROPERTIES
+    {
+    }
+    CONTROLS
+    {
+    }
+  }
+  LABELS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+  RDLDATA
+  {
+    <Report/>
+    END_OF_RDLDATA
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (report_object_body
+      (properties_section)
+      (dataset_section)
+      (requestpage_section
+        (properties_section)
+        (controls_section))
+      (labels_section)
+      (code_section
+        (code_item
+          (begin_end_block)))
+      (rdldata_section
+        (rdldata_payload_line)
+        (rdldata_end)))))
+
+==================
+Report Object With WordLayout (NAV_Standard/report/1305.txt)
+==================
+OBJECT Report 1305 Sample
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  DATASET
+  {
+  }
+  REQUESTPAGE
+  {
+    PROPERTIES
+    {
+    }
+    CONTROLS
+    {
+    }
+  }
+  LABELS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+  RDLDATA
+  {
+    <Report/>
+    END_OF_RDLDATA
+  }
+  WORDLAYOUT
+  {
+    UEsDBBQAAAAA
+    END_OF_WORDLAYOUT
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (report_object_body
+      (properties_section)
+      (dataset_section)
+      (requestpage_section
+        (properties_section)
+        (controls_section))
+      (labels_section)
+      (code_section
+        (code_item
+          (begin_end_block)))
+      (rdldata_section
+        (rdldata_payload_line)
+        (rdldata_end))
+      (wordlayout_section
+        (wordlayout_payload_line)
+        (wordlayout_end)))))
+
+==================
+Codeunit Object (NAV_Standard/codeunit/1.txt)
+==================
+OBJECT Codeunit 1 ApplicationManagement
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    PROCEDURE Ping@1();
+    BEGIN
+      EXIT;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (codeunit_object_body
+      (properties_section)
+      (code_section
+        (code_item
+          (procedure_declaration
+            (identifier)
+            (id_suffix)
+            (begin_end_block
+              (statement
+                (exit_statement)))))
+        (code_item
+          (begin_end_block))))))
+
+==================
+XmlPort Object (NAV_Standard/xmlport/1.txt)
+==================
+OBJECT XMLport 1 ConsolidationImport
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  ELEMENTS
+  {
+  }
+  EVENTS
+  {
+  }
+  REQUESTPAGE
+  {
+    PROPERTIES
+    {
+    }
+    CONTROLS
+    {
+    }
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (xmlport_object_body
+      (properties_section)
+      (elements_section)
+      (events_section)
+      (requestpage_section
+        (properties_section)
+        (controls_section))
+      (code_section
+        (code_item
+          (begin_end_block))))))
+
+==================
+Query Object (NAV_Standard/query/19.txt)
+==================
+OBJECT Query 19 VATEntries
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  ELEMENTS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (query_object_body
+      (properties_section)
+      (elements_section)
+      (code_section
+        (code_item
+          (begin_end_block))))))
+
+==================
+MenuSuite Object (NAV_Standard/menusuite/1010.txt)
+==================
+OBJECT MenuSuite 1010 DeptMBS
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  MENUNODES
+  {
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (menusuite_object_body
+      (properties_section)
+      (menunodes_section))))

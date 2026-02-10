@@ -1,0 +1,341 @@
+==================
+Foreach And Set Literal (NAV_Standard/table/1237.txt)
+==================
+OBJECT Codeunit 50000 LoopDemo
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    PROCEDURE Run@1();
+    VAR
+      Item@1000 : Integer;
+    BEGIN
+      FOREACH Item IN [1,2,3] DO
+        IF Item IN [1,3] THEN
+          EXIT;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (codeunit_object_body
+      (properties_section)
+      (code_section
+        (code_item
+          (procedure_declaration
+            (identifier)
+            (id_suffix)
+            (var_section
+              (variable_declaration
+                (annotated_identifier
+                  (identifier)
+                  (id_suffix))
+                (type_spec
+                  (identifier))))
+            (begin_end_block
+              (statement
+                (foreach_statement
+                  (expression
+                    (primary_expression
+                      (identifier)))
+                  (expression
+                    (set_literal
+                      (expression
+                        (primary_expression
+                          (number_literal)))
+                      (expression
+                        (primary_expression
+                          (number_literal)))
+                      (expression
+                        (primary_expression
+                          (number_literal)))))
+                  (statement_body
+                    (if_statement
+                      (expression
+                        (binary_expression
+                          (expression
+                            (primary_expression
+                              (identifier)))
+                          (expression
+                            (set_literal
+                              (expression
+                                (primary_expression
+                                  (number_literal)))
+                              (expression
+                                (primary_expression
+                                  (number_literal)))))))
+                      (statement_body
+                        (exit_statement)))))))))
+        (code_item
+          (begin_end_block))))))
+
+==================
+Attributes And Event Subscriber (NAV_Standard/codeunit/1034.txt)
+==================
+OBJECT Codeunit 50001 AttrDemo
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    [Integration]
+    PROCEDURE Notify@1();
+    BEGIN
+    END;
+
+    [EventSubscriber(Table,1003,OnAfterDeleteEvent)]
+    LOCAL PROCEDURE OnDelete@2(VAR Rec@1000 : Record 1003;RunTrigger@1001 : Boolean);
+    BEGIN
+      IF RunTrigger THEN
+        EXIT;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (codeunit_object_body
+      (properties_section)
+      (code_section
+        (code_item
+          (procedure_declaration
+            (attribute
+              (identifier))
+            (identifier)
+            (id_suffix)
+            (begin_end_block)))
+        (code_item
+          (procedure_declaration
+            (attribute
+              (identifier)
+              (metadata_value
+                (identifier)
+                (number_literal)
+                (identifier)))
+            (identifier)
+            (id_suffix)
+            (parameter_list
+              (parameter
+                (identifier)
+                (id_suffix)
+                (type_spec
+                  (identifier)
+                  (number_literal)))
+              (parameter
+                (identifier)
+                (id_suffix)
+                (type_spec
+                  (identifier))))
+            (begin_end_block
+              (statement
+                (if_statement
+                  (expression
+                    (primary_expression
+                      (identifier)))
+                  (statement_body
+                    (exit_statement)))))))
+        (code_item
+          (begin_end_block))))))
+
+==================
+DotNet Type Declaration (NAV_Standard/table/370.txt)
+==================
+OBJECT Codeunit 50002 DotNetDemo
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    VAR
+      Regex@1003 : DotNet 'System.String';
+
+    BEGIN
+      EXIT;
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (codeunit_object_body
+      (properties_section)
+      (code_section
+        (code_item
+          (var_section
+            (variable_declaration
+              (annotated_identifier
+                (identifier)
+                (id_suffix))
+              (type_spec
+                (identifier)
+                (string_literal)))))
+        (code_item
+          (begin_end_block
+            (statement
+              (exit_statement))))))))
+
+==================
+Return Variable Syntax (NAV_Standard/codeunit/10.txt)
+==================
+OBJECT Codeunit 50003 ReturnDemo
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  CODE
+  {
+    PROCEDURE ConvertValueToBase64@60(StringValue@1001 : Text) Base64Value : Text;
+    BEGIN
+      Base64Value := StringValue;
+    END;
+
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (codeunit_object_body
+      (properties_section)
+      (code_section
+        (code_item
+          (procedure_declaration
+            (identifier)
+            (id_suffix)
+            (parameter_list
+              (parameter
+                (identifier)
+                (id_suffix)
+                (type_spec
+                  (identifier))))
+            (identifier)
+            (type_spec
+              (identifier))
+            (begin_end_block
+              (statement
+                (assignment_statement
+                  (expression
+                    (primary_expression
+                      (identifier)))
+                  (expression
+                    (primary_expression
+                      (identifier))))))))
+        (code_item
+          (begin_end_block))))))
+
+==================
+Embedded Metadata Trigger Body (NAV_Standard/page/21.txt)
+==================
+OBJECT Table 50004 TriggerDemo
+{
+  OBJECT-PROPERTIES
+  {
+  }
+  PROPERTIES
+  {
+  }
+  FIELDS
+  {
+    { 1 ; ;Code ;Code20 ;OnValidate=BEGIN
+                                     IF Code = '' THEN
+                                       EXIT;
+                                   END;
+                                 }
+  }
+  KEYS
+  {
+  }
+  FIELDGROUPS
+  {
+  }
+  CODE
+  {
+    BEGIN
+    END.
+  }
+}
+---
+
+(source_file
+  (object_declaration
+    (object_header
+      (object_type
+        (identifier))
+      (number_literal)
+      (object_name))
+    (object_properties_section)
+    (table_object_body
+      (properties_section)
+      (fields_section
+        (section_item
+          (metadata_entry
+            (entry_header_cell)
+            (entry_header_cell)
+            (entry_header_cell)
+            (entry_header_cell)
+            (entry_header_cell)
+            (metadata_value)
+            (entry_header_cell)
+            (entry_header_cell)
+            (metadata_value)
+            (entry_header_cell)
+            (entry_header_cell)
+            (entry_header_cell)
+            (entry_header_cell))))
+      (keys_section)
+      (fieldgroups_section)
+      (code_section
+        (code_item
+          (begin_end_block))))))

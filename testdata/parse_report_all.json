@@ -1,0 +1,20 @@
+{
+  "mode": "all",
+  "timestamp_utc": "2026-02-10T13:06:53.097Z",
+  "total_files": 5008,
+  "successful_files": 5008,
+  "parse_error_files": 0,
+  "fatal_runs": 0,
+  "success_rate": 1,
+  "gate": {
+    "min_success_rate": 0.99,
+    "max_fatal_runs": 0,
+    "passed": true
+  },
+  "parse_error_paths": [],
+  "command": {
+    "exit_code": 0,
+    "signal": null
+  },
+  "json_summary_available": true
+}
